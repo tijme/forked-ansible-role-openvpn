@@ -61,7 +61,9 @@
 - name: Generate client configs
   import_tasks: client_keys.yml
   when: clients is defined
-
+  tags:
+    - client_keys
+    
 - name: Generate revocation list and clean up
   import_tasks: revocation.yml
   when: >-
